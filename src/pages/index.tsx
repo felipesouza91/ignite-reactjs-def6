@@ -1,67 +1,124 @@
-import { Flex, Text, Center, Divider } from '@chakra-ui/react';
+import {
+  Flex,
+  Text,
+  Center,
+  Image,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 
 import Header from '../components/Header';
 import Swipper from '../components/Swipper';
+import TravelIten from '../components/TravelIten';
 import styles from './Home.module.scss';
 export default function Home() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    xl: true,
+  });
   return (
     <>
       <Header />
       <Flex flexDirection="column">
         <Flex
-          flexDirection="column"
           justifyContent="center"
-          alignItems="flex-start"
-          backgroundColor="blue"
-          h="163"
+          alignItems="center"
+          backgroundImage="/Background.png"
+          backgroundSize="cover"
+          h="340"
           paddingX="4"
           paddingY="7"
           color="#F5F8FA"
         >
-          <Text fontSize="xl" pb="2" fontWeight="500">
-            5 Continentes, <br/> infinitas possibilidades.
-          </Text>
-          <Text fontSize="sm">
-            Chegou a hora de tirar do papel a viagem que você sempre sonhou.
-          </Text>
-        </Flex>
-        <Flex flexDir="column" px="12" py="9">
-          <Flex justifyContent="space-between">
-            <Flex flexDir="column">
-              <Flex alignItems="baseline" mb={6}>
-                <div className={ styles.elipse}></div>
-                <Text size="4" fontWeight="500">vida noturna</Text>
-              </Flex>
-              <Flex alignItems="baseline">
-                <div className={ styles.elipse}></div>
-                <Text size="4" fontWeight="500">moderno</Text>
-              </Flex>
+          <Flex
+            className={styles.container}
+            flexDirection="row"
+            justifyContent="space-between"
+            mx="43"
+            alignItems="center"
+          >
+            <Flex flexDirection="column">
+              <Text fontSize={['2xl', '5xl']} pb="2" fontWeight="500">
+                5 Continentes, <br /> infinitas possibilidades.
+              </Text>
+              <Text fontSize={['sm', 'xl']}>
+                Chegou a hora de tirar do papel a viagem que você sempre sonhou.
+              </Text>
             </Flex>
-            <Flex flexDir="column" justifyContent="flex-end">
-              <Flex alignItems="baseline" justifyContent= "flex-end" mb={6}>
-                <div className={ styles.elipse}></div>
-                <Text size="4" fontWeight="500">praia</Text>
-              </Flex>
-              <Flex alignItems="baseline" justifyContent= "flex-end">
-                <div className={ styles.elipse}></div>
-                <Text size="4" fontWeight="500">clássico</Text  >
-              </Flex>
+            {isWideVersion && (
+              <Image className={styles.imageBanner} src="/Airplane.png" />
+            )}
+          </Flex>
+        </Flex>
+        <Flex
+          flexDir="column"
+          px="12"
+          py="9"
+          my="10"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Flex
+            className={styles.container}
+            flexDirection={['column', 'row']}
+            w="100%"
+          >
+            <Flex
+              display="flex"
+              flexDir={['column', 'row']}
+              flexWrap="wrap"
+              gridRowGap="25px"
+              justifyContent="space-between"
+              alignItems="center"
+              className={styles.optionsContainer}
+            >
+              <TravelIten
+                iconSrc="/cocktail.png"
+                description="vida noturna"
+                isWideVersion={isWideVersion}
+              />
+              <TravelIten
+                iconSrc="/surf.png"
+                description="praia"
+                isWideVersion={isWideVersion}
+              />
+              <TravelIten
+                iconSrc="/building.png"
+                description="moderno"
+                isWideVersion={isWideVersion}
+              />
+              <TravelIten
+                iconSrc="/museum.png"
+                description="clássico"
+                isWideVersion={isWideVersion}
+              />
+              <TravelIten
+                iconSrc="/earth.png"
+                description="e mais"
+                isWideVersion={isWideVersion}
+              />
             </Flex>
           </Flex>
-          <Flex alignItems="baseline" justifyContent= "center" mt="6">
-            <div className={ styles.elipse}></div>
-            <Text size="4" fontWeight="500">e mais</Text  >
-          </Flex>  
         </Flex>
         <Center flex="1">
-          <div className={ styles.divider}/>
+          <div className={styles.divider} />
         </Center>
-        <Flex justifyContent="center" mb="5">
-          <Text fontSize="2xl" pt="5" px="9">
-            Vamos nessa?  Então escolha seu continente
-          </Text>
+        <Flex my="9" justifyContent="center" alignItems="center">
+          <Flex
+            alignContent="center"
+            justifyContent="center"
+            className={styles.container}
+          >
+            <Flex flexDirection="column" alignItems="center">
+              <Text fontSize={['xl', '4xl']} fontWeight="500" color="#47585B">
+                Vamos nessa?
+              </Text>
+              <Text fontSize={['xl', '4xl']} fontWeight="500" color="#47585B">
+                Então escolha seu continente
+              </Text>
+            </Flex>
+          </Flex>
         </Flex>
-        <Flex flex="1" maxHeight="500px">
+        <Flex height="450px" className={styles.optionsContainer} mb="50px">
           <Swipper />
         </Flex>
       </Flex>

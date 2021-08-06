@@ -1,12 +1,20 @@
-.elipse {
-  width: 8px;
-  height: 8px;
-  background-color: #FFBA08;
-  border-radius: 50%;
-  margin-right: 8px;
+.container {
+  max-width: 1280px;
+  flex: 1;
 }
 
 .divider {
-  width: 60px;
-  border: 1px solid #47585B
+  width: 90px;
+  background-color: #47585b;
+  border: 2px solid #47585b;
+}
+
+.optionsContainer {
+  width: 100%;
+}
+
+.imageBanner {
+  position: absolute;
+  right: 318px;
+  top: 163px;
 }

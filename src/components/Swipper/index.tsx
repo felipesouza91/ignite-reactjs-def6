@@ -1,52 +1,63 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper.min.css';
-import 'swiper/components/navigation/navigation.min.css';
-import 'swiper/components/pagination/pagination.min.css';
-import styles from './Swipper.module.scss';
-import SwiperCore, {
-  Navigation,
-  Pagination,
-  Mousewheel,
-  Keyboard,
-} from 'swiper/core';
-import { Image, Text } from '@chakra-ui/react';
 
-SwiperCore.use([Navigation, Pagination, Mousewheel, Keyboard]);
-SwiperCore.use([Navigation]);
+import styles from './Swipper.module.scss';
+
+import { Flex, Image, Text } from '@chakra-ui/react';
 
 const Swipper: React.FC = () => {
   return (
     <>
-      <Swiper
-        cssMode={true}
-        navigation={true}
-        pagination={true}
-        mousewheel={true}
-        keyboard={true}
-        className={styles.mySwiper}
-      >
+      <Swiper navigation={true} pagination={true} className={styles.mySwiper}>
         <SwiperSlide>
-          <Text className={styles.centered}>Teste</Text>
-          <Image src="https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&fm=jpg&fit=crop&w=1080&q=80&fit=max" />
+          <Flex className={styles.centered} flexDirection="column">
+            <Text fontSize={['4xl', '7xl']} fontWeight="700">
+              América do Norte
+            </Text>
+          </Flex>
+          <Image src="https://images.unsplash.com/photo-1508693926297-1d61ee3df82a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src="https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&fm=jpg&fit=crop&w=1080&q=80&fit=max" />
+          <Flex className={styles.centered} flexDirection="column">
+            <Text fontSize={['4xl', '7xl']} fontWeight="700">
+              América do Sul
+            </Text>
+          </Flex>
+          <Image src="https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src="https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&fm=jpg&fit=crop&w=1080&q=80&fit=max" />
+          <Flex>
+            <Flex className={styles.centered} flexDirection="column">
+              <Text fontSize={['4xl', '7xl']} fontWeight="700">
+                Ásia
+              </Text>
+            </Flex>
+          </Flex>
+          <Image src="https://images.unsplash.com/photo-1522547902298-51566e4fb383?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src="https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&fm=jpg&fit=crop&w=1080&q=80&fit=max" />
+          <Flex className={styles.centered} flexDirection="column">
+            <Text fontSize={['4xl', '7xl']} fontWeight="700">
+              África
+            </Text>
+          </Flex>
+          <Image src="https://images.unsplash.com/photo-1489493887464-892be6d1daae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=748&q=80" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src="https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&fm=jpg&fit=crop&w=1080&q=80&fit=max" />
+          <Flex className={styles.centered} flexDirection="column">
+            <Text fontSize={['4xl', '7xl']} fontWeight="700">
+              Europa
+            </Text>
+          </Flex>
+          <Image src="https://images.unsplash.com/photo-1471623432079-b009d30b6729?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src="https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&fm=jpg&fit=crop&w=1080&q=80&fit=max" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&fm=jpg&fit=crop&w=1080&q=80&fit=max" />
+          <Flex className={styles.centered} flexDirection="column">
+            <Text fontSize={['4xl', '7xl']} fontWeight="700">
+              Oceania
+            </Text>
+          </Flex>
+          <Image src="https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=717&q=80" />
         </SwiperSlide>
       </Swiper>
     </>

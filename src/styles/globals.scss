@@ -21,6 +21,9 @@ a {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -40,12 +43,4 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
 }

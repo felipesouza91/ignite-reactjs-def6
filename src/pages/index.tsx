@@ -13,6 +13,10 @@ import styles from './Home.module.scss';
 export default function Home() {
   const isWideVersion = useBreakpointValue({
     base: false,
+    lg: true,
+  });
+  const isWideImage = useBreakpointValue({
+    base: false,
     xl: true,
   });
   return (
@@ -44,7 +48,7 @@ export default function Home() {
                 Chegou a hora de tirar do papel a viagem que você sempre sonhou.
               </Text>
             </Flex>
-            {isWideVersion && (
+            {isWideImage && (
               <Image className={styles.imageBanner} src="/Airplane.png" />
             )}
           </Flex>

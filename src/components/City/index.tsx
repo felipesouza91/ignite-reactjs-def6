@@ -1,14 +1,14 @@
 import { Avatar, Flex, Image, Text } from '@chakra-ui/react';
 import React from 'react';
 
-interface ICityProps {
+interface IContinentProps {
   cityImage: string;
   cityName: string;
   countryName: string;
   countryFlagImage: string;
 }
 
-const City: React.FC<ICityProps> = ({
+const Continent: React.FC<IContinentProps> = ({
   cityImage,
   cityName,
   countryFlagImage,
@@ -22,7 +22,7 @@ const City: React.FC<ICityProps> = ({
       justifyContent="space-between"
       border="1px solid rgba(255, 186, 8, 0.5)"
       borderRadius="4px"
-      mb="12"
+      mb={['5', '12']}
     >
       <Image src={cityImage} />
       <Flex
@@ -46,4 +46,4 @@ const City: React.FC<ICityProps> = ({
   );
 };
 
-export default City;
+export default Continent;
